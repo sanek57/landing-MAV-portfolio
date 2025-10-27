@@ -100,7 +100,10 @@ body {
 .btn {
   @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[backgroun-color] ;
 }
-/* max-md:hidden md:justify-self-end */
+
+.btn.contant {
+  @apply max-md:hidden md:justify-self-end;
+}
 
 .btn-secondary {
   @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80;

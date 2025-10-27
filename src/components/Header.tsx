@@ -33,7 +33,7 @@ export const Header = () => {
             }}
           >
             <span className='material-symbols-rounded'>
-              {navOpen ? 'close':'menu'}
+              {navOpen ? 'close' : 'menu'}
             </span>
           </button>
           <Navbar navOpen={navOpen} />
@@ -41,7 +41,7 @@ export const Header = () => {
 
         <a
           href='#contact'
-          className='btn btn-secondary'
+          className='btn btn-secondary contant'
         >
           Contact Me
         </a>
