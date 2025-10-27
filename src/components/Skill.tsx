@@ -14,7 +14,7 @@ export const Skill = () => {
         </p>
 
         {/* auto-fill - растягивает до полной упаковки */}
-        <div className='grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]'>
+        <div className='grid gap-3 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]'>
           {skillItem.map(item => (
             <SkillCard
               key={item.label}
