@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 // components
 import { About } from './components/About'
 import { Contacts } from './components/Contacts'
@@ -8,15 +10,38 @@ import { Review } from './components/Review'
 import { Skill } from './components/Skill'
 import { Work } from './components/Work'
 
-import { ReactLenis, useLenis } from 'lenis/react'
+// node modules
+import { ReactLenis } from 'lenis/react'
+
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+// register GSAP plugin
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 function App() {
+  useGSAP(() => {
+    const elements = gsap.utils.toArray('.reveal-up')
 
-  const lenis = useLenis((lenis) => {
-    // called every scroll
-    // console.log(lenis)
+    // console.log(elements)
+
+    elements.forEach(el => {
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: '-200 bottom',
+          end: 'bottom 80%',
+          scrub: true,
+          // markers: true,
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+      })
+    })
   })
-
 
   return (
     <ReactLenis root>

@@ -9,7 +9,7 @@ export const Work = () => {
       id='work'
     >
       <div className='container'>
-        <h2 className='headline-2 mb-8'>My portfolio highlights</h2>
+        <h2 className='headline-2 mb-8 reveal-up'>My portfolio highlights</h2>
 
         <div className='grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]'>
           {works.map(item => (
@@ -19,6 +19,7 @@ export const Work = () => {
               title={item.title}
               tags={item.tags}
               projectLink={item.projectLink}
+              classes='reveal-up'
             />
           ))}
         </div>
