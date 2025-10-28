@@ -8,9 +8,18 @@ import { Review } from './components/Review'
 import { Skill } from './components/Skill'
 import { Work } from './components/Work'
 
+import { ReactLenis, useLenis } from 'lenis/react'
+
 function App() {
+
+  const lenis = useLenis((lenis) => {
+    // called every scroll
+    // console.log(lenis)
+  })
+
+
   return (
-    <>
+    <ReactLenis root>
       <Header />
       <main>
         <Hero />
@@ -21,7 +30,7 @@ function App() {
         <Contacts />
         <Footer />
       </main>
-    </>
+    </ReactLenis>
   )
 }
 
